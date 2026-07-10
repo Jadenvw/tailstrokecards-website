@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ImpactSplash } from "@/components/ImpactSlapsh";
 import ImageCard from "@/components/ImageCard";
+import EventsRoadmap from "@/components/EventsRoadmap";
 
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
         {/* Logo */}
         <div className="relative z-10 anim-logo-reveal">
           <Image
-            src="/logo.png"
+            src="/primaryLogo/logo.png"
             alt="TailstrokeCards logo"
             width={500}
             height={500}
@@ -59,28 +60,18 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ImageCard imageSrc="/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
+      <ImageCard imageSrc="/contentPhoto/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
         <p>
           In case we haven&apos;t met yet, I&apos;m the person behind the TailstrokeCards table!
           I started vending Pokémon cards at local shows in 2026 because of my lifelong passion for Pokémon
           and the incredible community that surrounds it.
         </p>
 
-        <p>
-          Growing up, Pokémon was an instrumental part of my life. From hiding my GameBoy with a copy of
-          Pokémon FireRed under my pillow when I was supposed to be sleeping, to exploring the open-world
-          adventures of Scarlet & Violet while in college, Pokémon has grown alongside me through every
-          step of my journey.
-        </p>
-
-        <p>
-          These days, you&apos;ll find me at shows across North and South Carolina with a table full of singles,
-          sealed product, and way too many opinions about pull rates. My goal is simple: create a welcoming table
-          filled with positive energy, great conversations, and a shared love for a franchise that has brought so
-          many of us together.
-        </p>
-
       </ImageCard>
+      <section className="bg-brand-green-dark/25 mb-2">
+        <EventsRoadmap />
+      </section>
+
     </>
   );
 }

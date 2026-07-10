@@ -5,10 +5,10 @@ export default function AboutPage() {
     return (
         <>
             <PageHero
-                imageSrc="/about-logo.PNG"
+                imageSrc="/heroPageLogo/about-logo.PNG"
                 imageAlt="About Page logo"
             />
-            <ImageCard imageSrc="/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
+            <ImageCard imageSrc="/contentPhoto/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
                 <p>
                     In case we haven&apos;t met yet, I&apos;m the person behind the TailstrokeCards table!
                     I started vending Pokémon cards at local shows in 2026 because of my lifelong passion for Pokémon
@@ -30,18 +30,15 @@ export default function AboutPage() {
                 </p>
 
             </ImageCard>
-            <ImageCard imageSrc="/display-stand.PNG" imageAlt="Photo of card display shelves on table" heading="My Collection" reverse>
-                <p>
-                    My collection consists of a number of cards from the Wizards of the Coast era all the way to
-                    the Mega Evolution block. My table has something for everyone!
-                </p>
+            <ImageCard imageSrc="/contentPhoto/display-stand.PNG" imageAlt="Photo of card display shelves on table" heading="My Collection" reverse>
+                <p> My collection spans everything from the Wizards of the Coast era to the Mega Evolution block, with plenty of personal
+                    favorites mixed in. Whether you&apos;re searching for a nostalgic childhood card or your next collection piece,
+                    there&apos;s a little something for every kind of collector. </p>
 
-                <p>
-                    If you are a binder collector, I am your guy! I have hundreds of singles from many differnt affordable price
-                    ranges for everyone. If you are more of a graded collector, I have small selection of both vintage and modern
-                    PSA slabs that you may be hunting for. My table also has a number of sealed items for those looking to rip some
-                    packs.
-                </p>
+                <p> If you&apos;re a binder collector, you&apos;ve come to the right place. I carry hundreds of singles across a wide
+                    range of price points, making it easy to find something that fits your collection and your budget. For graded
+                    collectors, I also bring a curated selection of vintage and modern PSA slabs, along with sealed products for anyone
+                    looking to crack some packs and chase their next big pull. </p>
             </ImageCard>
         </>
     );

@@ -4,7 +4,7 @@ export default function CollectionsPage() {
     return (
         <>
             <PageHero
-                imageSrc="/collection-logo.PNG"
+                imageSrc="/heroPageLogo/collection-logo.PNG"
                 imageAlt="Collections Page logo"
             />
         </>

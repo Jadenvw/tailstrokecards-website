@@ -29,14 +29,14 @@ const footerLinks = [
 export default function Footer() {
     return (
         <footer className="bg-brand-green/35 border-t border-brand-green-dark/32">
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-                <div className="flex flex-col md:flex-row md:justify-evenly items-center md:items-start gap-12 md:gap-6 text-center md:text-left">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+                <div className="flex flex-col md:flex-row md:justify-between items-center md:items-start gap-12 md:gap-6 text-center md:text-left">
 
                     {/* Logo / Brand */}
                     <div className="flex flex-col items-center gap-3">
                         <Link href="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 rounded-lg">
                             <Image
-                                src="/logo.png"
+                                src="/primaryLogo/logo.png"
                                 alt="TailstrokeCards"
                                 width={160}
                                 height={40}
@@ -76,7 +76,7 @@ export default function Footer() {
                             </a>
                             <a
                                 href="/contact"
-                                aria-label="Instagram"
+                                aria-label="contact page"
                                 className="flex items-center gap-2 text-sm text-brand-dark hover:text-brand-red transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-red rounded"
                             >
                                 <GmailIcon size={18} />
