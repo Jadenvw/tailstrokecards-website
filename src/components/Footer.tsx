@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { InstagramIcon, FacebookIcon, GmailIcon } from "@/components/icons/SocialIcons";
+import EasterEgg from "./EasterEgg";
 
 const footerLinks = [
     {
@@ -105,7 +106,7 @@ export default function Footer() {
                 </div>
             </div>
             {/* Bottom bar */}
-            <div className="py-6 border-t border-gray-100 bg-white text-center text-xs text-gray-400">
+            <div className="relative py-6 border-t border-gray-100 bg-white text-center text-xs text-gray-400">
                 © {new Date().getFullYear()} TailstrokeCards. Not affiliated with The Pokémon Company.
             </div>
         </footer>
