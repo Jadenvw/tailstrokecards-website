@@ -19,7 +19,7 @@ export default function ImageCard({
     return (
         <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
             <div
-                className={`grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 items-center ${reverse ? "md:[&>*:first-child]:order-2" : ""
+                className={`grid grid-cols-1 md:grid-cols-2 gap-4 items-center ${reverse ? "md:[&>*:first-child]:order-2" : ""
                     }`}
             >
                 {/* Image */}
@@ -36,7 +36,7 @@ export default function ImageCard({
                 </div>
 
                 {/* Text */}
-                <div className="text-center md:text-left">
+                <div className="text-center px-4 md:px-12">
                     {heading && (
                         <h2 className="text-2xl sm:text-3xl font-bold text-brand-green-dark mb-4">
                             {heading}
