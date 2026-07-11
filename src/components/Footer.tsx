@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { InstagramIcon, FacebookIcon, GmailIcon } from "@/components/icons/SocialIcons";
-import EasterEgg from "./EasterEgg";
+import { InstagramIcon, FacebookIcon, GmailIcon } from "@/components/SocialIcons";
 
 const footerLinks = [
     {
