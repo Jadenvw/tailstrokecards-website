@@ -1,12 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useCallback } from "react";
 import PageHero from "@/components/PageHero";
+import Snackbar from "@/components/Snackbar";
 
 
 export default function ContactPage() {
     const [form, setForm] = useState({ name: "", email: "", message: "", company_fax: "" });
     const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rate-limited">("idle");
+    const [snackbar, setSnackbar] = useState({ visible: false, message: "" });
+
+    const showSnackbar = (message: string) => setSnackbar({ visible: true, message });
+    const hideSnackbar = useCallback(() => setSnackbar({ visible: false, message: "" }), []);
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -24,7 +29,8 @@ export default function ContactPage() {
             });
 
             if (res.status === 429) {
-                setStatus("rate-limited");
+                setStatus("idle");
+                showSnackbar("You're submitting too quickly. Please wait a minute.");
                 return;
             }
 
@@ -33,7 +39,8 @@ export default function ContactPage() {
             setStatus("sent");
             setForm({ name: "", email: "", message: "", company_fax: "" });
         } catch {
-            setStatus("error");
+            setStatus("idle");
+            showSnackbar("Something went wrong. Please try again.");
         }
     }
 
@@ -178,19 +185,7 @@ export default function ContactPage() {
 
                     {/* Send — Centered below both columns */}
                     {status !== "sent" && (
-                        <div className="flex flex-col items-center gap-6 mt-10">
-                            {status === "error" && (
-                                <p className="text-sm text-red-600">
-                                    Something went wrong. Please try again.
-                                </p>
-                            )}
-
-                            {status === "rate-limited" && (
-                                <p className="text-sm text-red-600">
-                                    You&apos;re submitting too quickly. Please wait a minute and try again.
-                                </p>
-                            )}
-
+                        <div className="flex flex-col items-center mt-10">
                             <button
                                 type="submit"
                                 disabled={status === "sending"}
@@ -202,6 +197,11 @@ export default function ContactPage() {
                     )}
                 </form>
             </section>
+            <Snackbar
+                message={snackbar.message}
+                visible={snackbar.visible}
+                onClose={hideSnackbar}
+            />
         </>
     );
 }

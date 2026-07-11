@@ -1,5 +1,20 @@
+import type { Metadata } from "next";
 import PageHero from "@/components/PageHero";
 import ImageCard from "@/components/ImageCard";
+
+export const metadata: Metadata = {
+    title: "About | TailstrokeCards",
+    description:
+        "Meet the person behind the TailstrokeCards table — a lifelong Pokémon fan vending cards at shows across the Carolinas.",
+    openGraph: {
+        title: "About | TailstrokeCards",
+        description:
+            "Meet the person behind the TailstrokeCards table — a lifelong Pokémon fan vending cards at shows across the Carolinas.",
+        url: "https://tailstrokecards.com/about",
+        siteName: "TailstrokeCards",
+        type: "website",
+    },
+};
 
 export default function AboutPage() {
     return (
