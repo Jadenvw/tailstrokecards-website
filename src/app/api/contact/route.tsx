@@ -79,7 +79,7 @@ export async function POST(request: Request) {
         }
 
         // Layer 5: Honeypot — silently reject bot traffic without revealing detection.
-        const honeypot = (body as Record<string, unknown>)?.website;
+        const honeypot = (body as Record<string, unknown>)?.company_fax;
         if (typeof honeypot === "string" && honeypot.length > 0) {
             return NextResponse.json({ success: true });
         }
@@ -100,8 +100,8 @@ export async function POST(request: Request) {
         const cleanMessage = sanitize(message);
 
         await resend.emails.send({
-            from: "onboarding@resend.dev",
-            to: "jadenvw37@gmail.com", // TODO: change to production email before launch
+            from: "hello@tailstrokecards.com",
+            to: "hello@tailstrokecards.com",
             replyTo: cleanEmail,
             subject: `New message from ${cleanName}`,
             text: `Name: ${cleanName}\nEmail: ${cleanEmail}\n\nMessage:\n${cleanMessage}`,

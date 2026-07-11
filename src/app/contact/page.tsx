@@ -5,7 +5,7 @@ import PageHero from "@/components/PageHero";
 
 
 export default function ContactPage() {
-    const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
+    const [form, setForm] = useState({ name: "", email: "", message: "", company_fax: "" });
     const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rate-limited">("idle");
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
@@ -31,7 +31,7 @@ export default function ContactPage() {
             if (!res.ok) throw new Error();
 
             setStatus("sent");
-            setForm({ name: "", email: "", message: "", website: "" });
+            setForm({ name: "", email: "", message: "", company_fax: "" });
         } catch {
             setStatus("error");
         }
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 imageAlt="Contact Page logo"
             />
             <section className="min-h-screen">
-                <div className="max-w-6xl mx-auto px-6 py-16">
+                <form onSubmit={handleSubmit} className="max-w-6xl mx-auto px-6 py-16">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
 
                         {/* Left — Info Side */}
@@ -69,7 +69,7 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <p className="text-sm font-medium text-gray-900">Email</p>
-                                        <p className="text-gray-600">hello@ttsexpos.com</p>
+                                        <p className="text-gray-600">hello@tailstrokecards.com</p>
                                     </div>
                                 </div>
 
@@ -104,6 +104,7 @@ export default function ContactPage() {
                                         Thanks for reaching out. We&apos;ll get back to you soon.
                                     </p>
                                     <button
+                                        type="button"
                                         onClick={() => setStatus("idle")}
                                         className="mt-6 text-sm font-medium text-green-800 underline"
                                     >
@@ -162,8 +163,8 @@ export default function ContactPage() {
                                     {/* Honeypot — hidden from real users, catches bots that auto-fill every field */}
                                     <input
                                         type="text"
-                                        name="website"
-                                        value={form.website}
+                                        name="company_fax"
+                                        value={form.company_fax}
                                         onChange={handleChange}
                                         autoComplete="off"
                                         tabIndex={-1}
@@ -191,7 +192,7 @@ export default function ContactPage() {
                             )}
 
                             <button
-                                onClick={handleSubmit}
+                                type="submit"
                                 disabled={status === "sending"}
                                 className="rounded-lg bg-brand-green-dark/80 px-16 py-3.5 text-sm font-semibold text-white hover:bg-brand-green-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
                             >
@@ -199,7 +200,7 @@ export default function ContactPage() {
                             </button>
                         </div>
                     )}
-                </div>
+                </form>
             </section>
         </>
     );
