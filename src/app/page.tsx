@@ -32,7 +32,7 @@ export default function Home() {
             width={500}
             height={500}
             priority
-            className="w-72 sm:w-96 md:w-[28rem] h-auto drop-shadow-2xl"
+            className="w-72 sm:w-96 md:w-[28rem] h-auto"
           />
         </div>
 
