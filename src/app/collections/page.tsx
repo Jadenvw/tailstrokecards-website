@@ -25,6 +25,17 @@ export default function CollectionsPage() {
             />
             <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-16">
                 <CollectionCardsList />
+                <p className="mt-10 text-center text-sm text-gray-400">
+                    Digital binders powered by{" "}
+                    <a
+                        href="https://www.decktradr.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-500 hover:text-brand-green-dark transition-colors"
+                    >
+                        DeckTradr
+                    </a>
+                </p>
             </section>
         </>
     );
