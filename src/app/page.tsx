@@ -27,7 +27,7 @@ export default function Home() {
         {/* Logo */}
         <div className="relative z-10 anim-logo-reveal">
           <Image
-            src="/primaryLogo/logo.png"
+            src="/primaryLogo/logo.webp"
             alt="TailstrokeCards logo"
             width={500}
             height={500}
@@ -60,7 +60,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <ImageCard imageSrc="/contentPhoto/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
+      <ImageCard imageSrc="/contentPhoto/vending.webp" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
         <p>
           In case we haven&apos;t met yet, I&apos;m the person behind the TailstrokeCards table!
           I started vending Pokémon cards at local shows in 2026 because of my lifelong passion for Pokémon

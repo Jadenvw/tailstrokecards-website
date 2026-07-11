@@ -35,7 +35,7 @@ export default function Footer() {
                     <div className="flex flex-col items-center gap-3">
                         <Link href="/" className="focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-green focus-visible:ring-offset-2 rounded-lg">
                             <Image
-                                src="/primaryLogo/logo.png"
+                                src="/primaryLogo/logo.webp"
                                 alt="TailstrokeCards"
                                 width={160}
                                 height={40}

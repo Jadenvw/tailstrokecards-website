@@ -40,7 +40,7 @@ export default function EasterEgg() {
             {showSmeargle && (
                 <div className="fixed bottom-0 right-0 z-50 pointer-events-none anim-smeargle-pop">
                     <Image
-                        src="/contentPhoto/smeargle-says-hi.PNG"
+                        src="/contentPhoto/smeargle-says-hi.webp"
                         alt="Smeargle"
                         width={280}
                         height={560}

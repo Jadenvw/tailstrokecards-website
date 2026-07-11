@@ -5,10 +5,10 @@ export default function AboutPage() {
     return (
         <>
             <PageHero
-                imageSrc="/heroPageLogo/about-logo.PNG"
+                imageSrc="/heroPageLogo/about-logo.webp"
                 imageAlt="About Page logo"
             />
-            <ImageCard imageSrc="/contentPhoto/vending.PNG" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
+            <ImageCard imageSrc="/contentPhoto/vending.webp" imageAlt="Photo of the TailstrokeCards vendor" heading="What's Up Fellow Nerds!">
                 <p>
                     In case we haven&apos;t met yet, I&apos;m the person behind the TailstrokeCards table!
                     I started vending Pokémon cards at local shows in 2026 because of my lifelong passion for Pokémon
@@ -30,7 +30,7 @@ export default function AboutPage() {
                 </p>
 
             </ImageCard>
-            <ImageCard imageSrc="/contentPhoto/display-stand.PNG" imageAlt="Photo of card display shelves on table" heading="My Collection" reverse>
+            <ImageCard imageSrc="/contentPhoto/display-stand.webp" imageAlt="Photo of card display shelves on table" heading="My Collection" reverse>
                 <p> My collection spans everything from the Wizards of the Coast era to the Mega Evolution block, with plenty of personal
                     favorites mixed in. Whether you&apos;re searching for a nostalgic childhood card or your next collection piece,
                     there&apos;s a little something for every kind of collector. </p>

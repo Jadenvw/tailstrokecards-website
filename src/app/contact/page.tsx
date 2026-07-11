@@ -40,7 +40,7 @@ export default function ContactPage() {
     return (
         <>
             <PageHero
-                imageSrc="/heroPageLogo/contact-logo.PNG"
+                imageSrc="/heroPageLogo/contact-logo.webp"
                 imageAlt="Contact Page logo"
             />
             <section className="min-h-screen">

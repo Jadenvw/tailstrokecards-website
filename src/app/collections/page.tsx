@@ -5,7 +5,7 @@ export default function CollectionsPage() {
     return (
         <>
             <PageHero
-                imageSrc="/heroPageLogo/collection-logo.PNG"
+                imageSrc="/heroPageLogo/collection-logo.webp"
                 imageAlt="Collections Page logo"
             />
             <section className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 py-12 pb-16">

@@ -6,7 +6,7 @@ export default function EventsPage() {
     return (
         <>
             <PageHero
-                imageSrc="/heroPageLogo/events-logo.PNG"
+                imageSrc="/heroPageLogo/events-logo.webp"
                 imageAlt="Events Page logo"
             />
             <EventsRoadmap />

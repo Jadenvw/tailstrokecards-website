@@ -48,7 +48,7 @@ export default function Navbar() {
                     {/* Logo / Brand */}
                     <Link href="/" className="flex items-center group focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-dark/40 focus-visible:ring-offset-2 focus-visible:ring-offset-white rounded-lg">
                         <Image
-                            src="/primaryLogo/ts-logo.png"
+                            src="/primaryLogo/ts-logo.webp"
                             alt="TailstrokeCards"
                             width={160}
                             height={40}
