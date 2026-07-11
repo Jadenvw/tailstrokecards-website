@@ -5,8 +5,8 @@ import PageHero from "@/components/PageHero";
 
 
 export default function ContactPage() {
-    const [form, setForm] = useState({ name: "", email: "", message: "", agreed: false });
-    const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+    const [form, setForm] = useState({ name: "", email: "", message: "", website: "" });
+    const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error" | "rate-limited">("idle");
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
         setForm({ ...form, [e.target.name]: e.target.value });
@@ -23,10 +23,15 @@ export default function ContactPage() {
                 body: JSON.stringify(form),
             });
 
+            if (res.status === 429) {
+                setStatus("rate-limited");
+                return;
+            }
+
             if (!res.ok) throw new Error();
 
             setStatus("sent");
-            setForm({ name: "", email: "", message: "", agreed: false });
+            setForm({ name: "", email: "", message: "", website: "" });
         } catch {
             setStatus("error");
         }
@@ -106,7 +111,7 @@ export default function ContactPage() {
                                     </button>
                                 </div>
                             ) : (
-                                <div className="rounded-2xl bg-white shadow-lg border border-gray-100 p-8 md:p-10 space-y-5">
+                                <div className="relative rounded-2xl bg-white shadow-lg border border-gray-100 p-8 md:p-10 space-y-5">
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-brand-green-dark mb-1">
                                             Name
@@ -154,38 +159,40 @@ export default function ContactPage() {
                                             className="w-full rounded-lg border border-gray-300 px-4 py-3 text-gray-900 placeholder:text-gray-400 resize-none focus:outline-none focus:ring-2 focus:ring-gray-900 focus:border-transparent transition"
                                         />
                                     </div>
+                                    {/* Honeypot — hidden from real users, catches bots that auto-fill every field */}
+                                    <input
+                                        type="text"
+                                        name="website"
+                                        value={form.website}
+                                        onChange={handleChange}
+                                        autoComplete="off"
+                                        tabIndex={-1}
+                                        className="absolute left-[-9999px] w-px h-px opacity-0"
+                                        aria-hidden="true"
+                                    />
                                 </div>
                             )}
                         </div>
                     </div>
 
-                    {/* Terms & Send — Centered below both columns */}
+                    {/* Send — Centered below both columns */}
                     {status !== "sent" && (
                         <div className="flex flex-col items-center gap-6 mt-10">
-                            <label className="flex items-start gap-3 cursor-pointer">
-                                <input
-                                    type="checkbox"
-                                    checked={form.agreed}
-                                    onChange={(e) => setForm({ ...form, agreed: e.target.checked })}
-                                    className="mt-1 w-4 h-4 rounded border-gray-300 text-gray-900 focus:ring-gray-900"
-                                />
-                                <span className="text-sm text-gray-600">
-                                    I agree to the{" "}
-                                    <a href="/terms" className="underline text-gray-900 hover:text-gray-600 transition">
-                                        Terms &amp; Conditions
-                                    </a>
-                                </span>
-                            </label>
-
                             {status === "error" && (
                                 <p className="text-sm text-red-600">
                                     Something went wrong. Please try again.
                                 </p>
                             )}
 
+                            {status === "rate-limited" && (
+                                <p className="text-sm text-red-600">
+                                    You&apos;re submitting too quickly. Please wait a minute and try again.
+                                </p>
+                            )}
+
                             <button
                                 onClick={handleSubmit}
-                                disabled={status === "sending" || !form.agreed}
+                                disabled={status === "sending"}
                                 className="rounded-lg bg-brand-green-dark/80 px-16 py-3.5 text-sm font-semibold text-white hover:bg-brand-green-dark transition disabled:opacity-50 disabled:cursor-not-allowed"
                             >
                                 {status === "sending" ? "Sending..." : "Send Message"}
