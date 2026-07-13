@@ -28,13 +28,14 @@ export default function CollectionsPage() {
                 <p className="mt-10 text-center text-sm text-gray-400">
                     Digital binders powered by{" "}
                     <a
-                        href="https://www.decktradr.com"
+                        href="https://decktradr.com/refer/TAILSTROKE"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-gray-500 hover:text-brand-green-dark transition-colors"
                     >
                         DeckTradr
                     </a>
+                    {" "}— use code <span className="font-semibold text-gray-500">TAILSTROKE</span> for 2 free weeks of Pro
                 </p>
             </section>
         </>

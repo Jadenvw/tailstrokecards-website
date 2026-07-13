@@ -68,4 +68,14 @@ export const events: EventItem[] = [
             { date: "2026-09-27", startTime: "010:00", endTime: "17:00" },
         ],
     },
+    {
+        id: "6",
+        name: "Cape Fear Pop Culture Fest 2026",
+        city: "Wilmington",
+        state: "NC",
+        address: "5102 Oleander Dr, Wilmington NC 28403",
+        days: [
+            { date: "2026-07-25", startTime: "010:00", endTime: "17:00" },
+        ],
+    },
 ];

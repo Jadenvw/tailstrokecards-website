@@ -21,8 +21,38 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    name: "TailstrokeCards",
+    description:
+      "Pokémon card vending at shows across the Carolinas. Browse singles, sealed product, and graded slabs.",
+    url: "https://tailstrokecards.com",
+    email: "hello@tailstrokecards.com",
+    areaServed: [
+      { "@type": "State", name: "North Carolina" },
+      { "@type": "State", name: "South Carolina" },
+    ],
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Raleigh",
+      addressRegion: "NC",
+      addressCountry: "US",
+    },
+    sameAs: [
+      "https://instagram.com/tailstrokecards",
+      "https://facebook.com/TailstrokeCards",
+    ],
+  };
+
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className={`${inter.variable} font-sans`}>
         <Navbar />
         <main className="min-h-screen pt-16">{children}</main>
